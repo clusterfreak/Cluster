@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Main-Class: de.clusterfreak.ClusterGraphix.ClusterGraphix
+Package: de.clusterfreak.ClusterGraphix
+Created-By: Thomas Heym
+Name: de/clusterfreak/ClusterGraphix
+Specification-Title: Display of objects and clusters with integrated cluster analysis
+Specification-Version: 0.96.4
+Specification-Vendor: Clusterfreak
+Implementation-Title: de.clusterfreak.ClusterGraphix
+Implementation-Version: 2024-12-08
+Implementation-Vendor: Clusterfreak

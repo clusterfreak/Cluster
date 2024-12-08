@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="de.clusterfreak.ClusterCore" type="repository">
+    <properties maven-id="de.clusterfreak:ClusterCore:1.2.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ClusterCore-1.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

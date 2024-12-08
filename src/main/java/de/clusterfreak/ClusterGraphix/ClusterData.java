@@ -6,7 +6,7 @@ import javax.swing.*;
  * ClusterGraphix meta data
  *
  * @author Thomas Heym
- * @version 0.1.7 (2022-09-24)
+ * @version 0.1.8 (2024-12-08)
  */
 public class ClusterData {
     /**
@@ -61,7 +61,7 @@ public class ClusterData {
      */
     public static String[] initial = {"true", "2", "100", "true", "1", "0", "null", "[0][0]", "[0][2]", "null",
             "false", "false", "1", "[0][0]", "1.0e-7", "false", "true", "false", "true", "false", "false", "[100]",
-            "[100]", "[100]", "0", "5", "", "0.96.2", "2021", "ClusterGraphix " + "0.96.2", " ready", "{...", "false",
+            "[100]", "[100]", "0", "5", "", "0.96.4", "2024", "ClusterGraphix " + "0.96.4", " ready", "{...", "false",
             "0", "false", "true", "true", "false", "true", "[100]", "true"};
     /**
      * gui

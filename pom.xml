@@ -6,7 +6,7 @@
     <!-- Correct Coordinates -->
     <groupId>de.clusterfreak</groupId>
     <artifactId>ClusterGraphix</artifactId>
-    <version>0.96.2</version>
+    <version>0.96.4</version>
     <!-- Project Name, Description and URL -->
     <name>${project.artifactId}</name>
     <description>Core classes for cluster analysis</description>
@@ -18,6 +18,17 @@
             <url>https://www.opensource.org/licenses/mit-license.php</url>
         </license>
     </licenses>
+    <!-- Distribution Management -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
     <!-- Developer Information -->
     <developers>
         <developer>
@@ -27,18 +38,24 @@
             <organizationUrl>https://clusterfreak.de</organizationUrl>
         </developer>
     </developers>
+    <!-- SCM Information -->
+    <scm>
+        <connection>scm:git:git://github.com/clusterfreak/ClusterGraphix.git</connection>
+        <developerConnection>scm:git:ssh://github.com:clusterfreak/ClusterGraphix.git</developerConnection>
+        <url>http://github.com/clusterfreak/ClusterGraphix/tree/master</url>
+    </scm>
     <!-- Java Version -->
     <properties>
-        <maven.compiler.release>19</maven.compiler.release>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.release>23</maven.compiler.release>
+        <maven.compiler.source>23</maven.compiler.source>
+        <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
             <groupId>de.clusterfreak</groupId>
             <artifactId>ClusterCore</artifactId>
-            <version>1.1.4</version>
+            <version>1.2.0</version>
         </dependency>
     </dependencies>
     <build>
@@ -46,7 +63,72 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.13.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.11.2</version>
+                <configuration>
+
+                    <!-- source -->
+                    <source>23</source>
+
+                    <detectJavaApiLink>false</detectJavaApiLink>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.2.7</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--no-permission-warning</arg>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.7.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
             </plugin>
         </plugins>
     </build>

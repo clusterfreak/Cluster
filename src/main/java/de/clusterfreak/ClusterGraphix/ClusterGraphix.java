@@ -27,7 +27,7 @@ import java.util.*;
  * Display of objects and clusters with integrated cluster analysis
  *
  * @author Thomas Heym
- * @version 0.96.4 (2023-08-01)
+ * @version 0.96.4 (2024-12-08)
  */
 public class ClusterGraphix extends JPanel implements ActionListener {
     /**
